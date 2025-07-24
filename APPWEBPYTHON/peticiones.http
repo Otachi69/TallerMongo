@@ -1,0 +1,15 @@
+
+#registrar instructor
+POST http://127.0.0.1:5000/registrar_instructor
+
+# login instructor
+
+POST http://127.0.0.1:5000/login
+
+
+# subir guia de aprendizaje
+
+GET http://127.0.0.1:5000/subir_guia
+
+POST http://127.0.0.1:5000/subir_guia
+

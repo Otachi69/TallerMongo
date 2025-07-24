@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SENA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .button-group {
+            margin-top: 30px;
+        }
+
+        .button-group a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #28a745;
+            /* Color verde para acciones */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group a:hover {
+            background-color: #218838;
+        }
+
+        .logout-link {
+            display: block;
+            margin-top: 20px;
+            color: #dc3545;
+            /* Color rojo para salir */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bienvenido al Dashboard, {{ current_user.nombre_completo }}!</h1>
+        <p>Tu usuario es: <strong>{{ current_user.usuario }}</strong></p>
+        <p>Tu correo es: <strong>{{ current_user.correo_electronico }}</strong></p>
+        <p>Tu regional es: <strong>{{ current_user.regional.nombre_regional }}</strong></p>
+
+
+        <div class="button-group">
+            <a href="{{ url_for('mostrar_subir_guia') }}">Subir Guía de Aprendizaje</a> {# <-- Modificado aquí #} <a
+                href="{{ url_for('listar_guias') }}">Ver Guías de Aprendizaje</a>
+        </div>
+        <a href="{{ url_for('logout') }}" class="logout-link">Cerrar Sesión</a>
+    </div>
+</body>
+
+</html>
