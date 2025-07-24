@@ -12,7 +12,7 @@ from flask_mail import Mail, Message
 app = Flask(__name__)
 
 # Configuración de la clave secreta para Flask (necesario para flash y sesiones)
-app.config['SECRET_KEY'] = 'una_clave_secreta_muy_segura_y_larga_para_sena_app'
+app.config['SECRET_KEY'] = '1212212121'
 
 # Configuración para la subida de archivos
 UPLOAD_FOLDER = './uploads/' # Carpeta donde se guardarán los PDFs
